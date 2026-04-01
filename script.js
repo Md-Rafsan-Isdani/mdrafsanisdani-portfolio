@@ -1,144 +1,108 @@
-
 /* ============================================================
-   RAFSAN ISDANI — Portfolio JavaScript
+   RAFSAN ISDANI — Showcase Portfolio JS
    ============================================================
-   Features:
-     1. Circuit-board canvas animation (hero background)
-     2. Mobile nav toggle
-     3. Navbar scroll effect & active section highlighting
-     4. Smooth scroll
-     5. Scroll-triggered reveal animations (IntersectionObserver)
-     6. Skill bar fill animation
-     7. Contact form validation & thank-you
+   1. Circuit-grid canvas animation
+   2. Mobile nav toggle
+   3. Navbar scroll + active section
+   4. Smooth scroll
+   5. Scroll-triggered reveals
+   6. Expandable cards (Journey, Skills, Projects)
+   7. Skill bar animation
+   8. Contact form validation
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ──────────────────────────────────────────────────────────
-     1. CIRCUIT CANVAS — animated tech-grid background
+     1. CIRCUIT CANVAS
      ────────────────────────────────────────────────────────── */
-  const canvas = document.getElementById('circuitCanvas');
+  const canvas = document.getElementById('gridCanvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let w, h, nodes = [], edges = [];
 
     function resize() {
-      w = canvas.width  = canvas.offsetWidth;
+      w = canvas.width = canvas.offsetWidth;
       h = canvas.height = canvas.offsetHeight;
-      generateGrid();
+      buildGrid();
     }
 
-    function generateGrid() {
-      nodes = [];
-      edges = [];
-      const spacing = 80;
-      const cols = Math.ceil(w / spacing) + 1;
-      const rows = Math.ceil(h / spacing) + 1;
-
+    function buildGrid() {
+      nodes = []; edges = [];
+      const sp = 90;
+      const cols = Math.ceil(w / sp) + 1;
+      const rows = Math.ceil(h / sp) + 1;
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
-          if (Math.random() > 0.45) {
+          if (Math.random() > 0.5) {
             nodes.push({
-              x: c * spacing + (Math.random() - 0.5) * 20,
-              y: r * spacing + (Math.random() - 0.5) * 20,
-              r: Math.random() * 2 + 1,
-              pulse: Math.random() * Math.PI * 2,
-              speed: 0.01 + Math.random() * 0.02
+              x: c * sp + (Math.random() - 0.5) * 24,
+              y: r * sp + (Math.random() - 0.5) * 24,
+              r: Math.random() * 1.8 + 0.8,
+              p: Math.random() * Math.PI * 2,
+              s: 0.008 + Math.random() * 0.015
             });
           }
         }
       }
-
-      // Connect close nodes
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x;
           const dy = nodes[i].y - nodes[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < spacing * 1.5 && Math.random() > 0.6) {
+          if (Math.sqrt(dx * dx + dy * dy) < sp * 1.5 && Math.random() > 0.65) {
             edges.push([i, j]);
           }
         }
       }
     }
 
-    let animId;
+    let raf;
     function draw() {
       ctx.clearRect(0, 0, w, h);
-
-      // Draw edges
-      ctx.strokeStyle = 'rgba(6, 182, 212, 0.07)';
+      ctx.strokeStyle = 'rgba(6,182,212,0.06)';
       ctx.lineWidth = 1;
       edges.forEach(([a, b]) => {
         ctx.beginPath();
-        // Draw right-angle paths (circuit style)
-        const midX = nodes[a].x;
-        const midY = nodes[b].y;
         ctx.moveTo(nodes[a].x, nodes[a].y);
-        ctx.lineTo(midX, midY);
+        ctx.lineTo(nodes[a].x, nodes[b].y);
         ctx.lineTo(nodes[b].x, nodes[b].y);
         ctx.stroke();
       });
-
-      // Draw nodes
       nodes.forEach(n => {
-        n.pulse += n.speed;
-        const alpha = 0.15 + Math.sin(n.pulse) * 0.1;
-        ctx.fillStyle = `rgba(6, 182, 212, ${alpha})`;
+        n.p += n.s;
+        const alpha = 0.12 + Math.sin(n.p) * 0.08;
+        ctx.fillStyle = `rgba(6,182,212,${alpha})`;
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fill();
       });
-
-      animId = requestAnimationFrame(draw);
+      raf = requestAnimationFrame(draw);
     }
 
-    resize();
-    draw();
-    window.addEventListener('resize', () => {
-      cancelAnimationFrame(animId);
-      resize();
-      draw();
-    });
+    resize(); draw();
+    window.addEventListener('resize', () => { cancelAnimationFrame(raf); resize(); draw(); });
   }
 
   /* ──────────────────────────────────────────────────────────
-     2. MOBILE NAV TOGGLE
+     2. MOBILE NAV
      ────────────────────────────────────────────────────────── */
-  const navToggle = document.getElementById('navToggle');
-  const navLinks  = document.querySelector('.nav-links');
-
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
+  const toggle = document.getElementById('navToggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { toggle.classList.remove('open'); links.classList.remove('open'); }));
   }
 
   /* ──────────────────────────────────────────────────────────
-     3. NAVBAR — shrink on scroll + active section
+     3. NAVBAR SCROLL + ACTIVE SECTION
      ────────────────────────────────────────────────────────── */
-  const navbar   = document.getElementById('navbar');
-  const sections = document.querySelectorAll('section[id]');
-
+  const nav = document.getElementById('navbar');
+  const secs = document.querySelectorAll('section[id]');
   function onScroll() {
-    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
-
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 140) current = sec.id;
-    });
-    if (navLinks) {
-      navLinks.querySelectorAll('a').forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
-      });
-    }
+    if (nav) nav.classList.toggle('scrolled', scrollY > 50);
+    let cur = '';
+    secs.forEach(s => { if (scrollY >= s.offsetTop - 140) cur = s.id; });
+    if (links) links.querySelectorAll('a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -146,146 +110,131 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ──────────────────────────────────────────────────────────
      4. SMOOTH SCROLL
      ────────────────────────────────────────────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
 
   /* ──────────────────────────────────────────────────────────
-     5. SCROLL-TRIGGERED REVEALS
+     5. SCROLL REVEALS
      ────────────────────────────────────────────────────────── */
-  const animEls = document.querySelectorAll('[data-anim]');
-
+  const anims = document.querySelectorAll('[data-anim]');
   if ('IntersectionObserver' in window) {
-    let idx = 0;
-    const revealObserver = new IntersectionObserver(entries => {
+    let stagger = 0;
+    const obs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Stagger effect
-          setTimeout(() => entry.target.classList.add('visible'), idx * 80);
-          idx++;
-          revealObserver.unobserve(entry.target);
-          // Reset counter when batch done
-          setTimeout(() => { idx = 0; }, 600);
+          setTimeout(() => entry.target.classList.add('visible'), stagger * 60);
+          stagger++;
+          obs.unobserve(entry.target);
+          setTimeout(() => { stagger = 0; }, 500);
         }
       });
-    }, { threshold: 0.12 });
-
-    animEls.forEach(el => revealObserver.observe(el));
+    }, { threshold: 0.1 });
+    anims.forEach(el => obs.observe(el));
   } else {
-    animEls.forEach(el => el.classList.add('visible'));
+    anims.forEach(el => el.classList.add('visible'));
   }
 
   /* ──────────────────────────────────────────────────────────
-     6. SKILL BAR FILL
+     6. EXPANDABLE CARDS
+     Click a card with [data-expand] to toggle its details.
      ────────────────────────────────────────────────────────── */
-  const bars = document.querySelectorAll('.sk-bar-fill');
+  document.querySelectorAll('[data-expand]').forEach(card => {
+    card.addEventListener('click', e => {
+      // Don't toggle if user clicked a link inside
+      if (e.target.closest('a')) return;
+      card.classList.toggle('expanded');
 
-  if ('IntersectionObserver' in window) {
-    const barObserver = new IntersectionObserver(entries => {
+      // Animate skill bars inside if expanding
+      if (card.classList.contains('expanded')) {
+        card.querySelectorAll('.bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.level + '%';
+        });
+      }
+    });
+  });
+
+  /* ──────────────────────────────────────────────────────────
+     7. SKILL BAR FILL (for bars outside expandable cards,
+        triggered by scroll)
+     ────────────────────────────────────────────────────────── */
+  const standaloneBars = document.querySelectorAll('.bar-fill:not([data-expand] .bar-fill)');
+  if ('IntersectionObserver' in window && standaloneBars.length) {
+    const bObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.width = `${entry.target.dataset.level}%`;
-          barObserver.unobserve(entry.target);
+          entry.target.style.width = entry.target.dataset.level + '%';
+          bObs.unobserve(entry.target);
         }
       });
     }, { threshold: 0.25 });
-    bars.forEach(bar => barObserver.observe(bar));
-  } else {
-    bars.forEach(bar => { bar.style.width = `${bar.dataset.level}%`; });
+    standaloneBars.forEach(b => bObs.observe(b));
   }
 
   /* ──────────────────────────────────────────────────────────
-     7. CONTACT FORM — Validation & Thank-You
+     8. CONTACT FORM
      ────────────────────────────────────────────────────────── */
-  const form       = document.getElementById('contactForm');
-  const nameInput  = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const msgInput   = document.getElementById('message');
-  const nameError  = document.getElementById('nameError');
-  const emailError = document.getElementById('emailError');
-  const msgError   = document.getElementById('messageError');
-  const successBox = document.getElementById('formSuccess');
-  const submitBtn  = form ? form.querySelector('.btn-submit') : null;
+  const form = document.getElementById('contactForm');
+  if (!form) return;
 
-  function isValidEmail(str) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
+  const nameI = document.getElementById('name');
+  const emailI = document.getElementById('email');
+  const msgI = document.getElementById('message');
+  const nameE = document.getElementById('nameError');
+  const emailE = document.getElementById('emailError');
+  const msgE = document.getElementById('messageError');
+  const okBox = document.getElementById('formSuccess');
+  const subBtn = form.querySelector('.btn-submit');
+
+  const validEmail = s => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+
+  function validate() {
+    let ok = true;
+    nameE.textContent = emailE.textContent = msgE.textContent = '';
+
+    if (!nameI.value.trim()) { nameE.textContent = 'Please enter your name.'; ok = false; }
+    if (!emailI.value.trim()) { emailE.textContent = 'Please enter your email.'; ok = false; }
+    else if (!validEmail(emailI.value.trim())) { emailE.textContent = 'Invalid email address.'; ok = false; }
+    if (!msgI.value.trim()) { msgE.textContent = 'Please enter a message.'; ok = false; }
+    else if (msgI.value.trim().length < 10) { msgE.textContent = 'At least 10 characters please.'; ok = false; }
+    return ok;
   }
 
-  function clearErrors() {
-    if (nameError)  nameError.textContent  = '';
-    if (emailError) emailError.textContent = '';
-    if (msgError)   msgError.textContent   = '';
-  }
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!validate()) return;
 
-  function validateForm() {
-    let valid = true;
-    clearErrors();
+    subBtn.classList.add('loading');
+    subBtn.disabled = true;
 
-    if (!nameInput.value.trim()) {
-      nameError.textContent = 'Please enter your name.';
-      valid = false;
-    }
-    if (!emailInput.value.trim()) {
-      emailError.textContent = 'Please enter your email.';
-      valid = false;
-    } else if (!isValidEmail(emailInput.value.trim())) {
-      emailError.textContent = 'Please enter a valid email address.';
-      valid = false;
-    }
-    if (!msgInput.value.trim()) {
-      msgError.textContent = 'Please enter a message.';
-      valid = false;
-    } else if (msgInput.value.trim().length < 10) {
-      msgError.textContent = 'Message should be at least 10 characters.';
-      valid = false;
-    }
-    return valid;
-  }
+    // Simulated send — replace with real fetch()
+    setTimeout(() => {
+      subBtn.classList.remove('loading');
+      subBtn.disabled = false;
+      form.reset();
+      okBox.classList.add('show');
+      setTimeout(() => okBox.classList.remove('show'), 6000);
+    }, 1200);
 
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      if (!validateForm()) return;
+    /*
+     * CONNECT A REAL BACKEND:
+     * fetch('https://your-api.com/contact', {
+     *   method: 'POST',
+     *   headers: { 'Content-Type': 'application/json' },
+     *   body: JSON.stringify({
+     *     name: nameI.value.trim(),
+     *     email: emailI.value.trim(),
+     *     message: msgI.value.trim(),
+     *   }),
+     * }).then(…).catch(…);
+     */
+  });
 
-      submitBtn.classList.add('loading');
-      submitBtn.disabled = true;
+  nameI.addEventListener('input', () => { nameE.textContent = ''; });
+  emailI.addEventListener('input', () => { emailE.textContent = ''; });
+  msgI.addEventListener('input', () => { msgE.textContent = ''; });
 
-      /* ─── Simulated send — replace with real fetch() ─── */
-      setTimeout(() => {
-        submitBtn.classList.remove('loading');
-        submitBtn.disabled = false;
-        form.reset();
-        successBox.classList.add('show');
-        setTimeout(() => successBox.classList.remove('show'), 6000);
-      }, 1200);
-
-      /*
-       * ─── CONNECT A REAL BACKEND ───
-       * Replace setTimeout above with:
-       *
-       * fetch('https://your-api.com/contact', {
-       *   method: 'POST',
-       *   headers: { 'Content-Type': 'application/json' },
-       *   body: JSON.stringify({
-       *     name:    nameInput.value.trim(),
-       *     email:   emailInput.value.trim(),
-       *     message: msgInput.value.trim(),
-       *   }),
-       * })
-       * .then(res => { ... show success ... })
-       * .catch(err => { ... show error ... });
-       */
-    });
-
-    // Clear individual errors on input
-    nameInput.addEventListener('input',  () => { nameError.textContent = ''; });
-    emailInput.addEventListener('input', () => { emailError.textContent = ''; });
-    msgInput.addEventListener('input',   () => { msgError.textContent = ''; });
-  }
-
-}); // end DOMContentLoaded
+});
