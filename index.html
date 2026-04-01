@@ -32,7 +32,6 @@
     <div class="hero-inner">
       <div class="hero-photo-col anim-fade d2">
         <div class="photo-frame">
-          <!-- UPDATE: Replace profile.jpg with your photo filename -->
           <img src="profile.jpg" alt="Md Rafsan Isdani" class="photo" />
         </div>
       </div>
@@ -100,7 +99,7 @@
     </div>
   </section>
 
-  <!-- ═══════════════════ JOURNEY (Experience + Education + Leadership) ═══════════════════ -->
+  <!-- ═══════════════════ JOURNEY ═══════════════════ -->
   <section class="journey" id="journey">
     <div class="container">
       <h2 class="sec-title" data-anim>My Journey</h2>
@@ -108,7 +107,6 @@
 
       <div class="journey-grid">
 
-        <!-- Each card expands on click -->
         <div class="j-card" data-anim data-expand>
           <div class="j-header">
             <span class="j-icon">🎓</span>
@@ -285,9 +283,71 @@
 
       <div class="pj-grid">
 
+        <!-- Project 1: Dynamic Temperature Cooling — PLC -->
         <article class="pj-card" data-anim data-expand>
           <div class="pj-visual">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop" alt="PLC Control System" class="pj-img" />
+            <svg class="pj-svg" viewBox="0 0 600 375" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g1a" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6B4226"/><stop offset="100%" stop-color="#3E2723"/></linearGradient>
+                <linearGradient id="g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D4A574"/><stop offset="100%" stop-color="#8B5E3C"/></linearGradient>
+              </defs>
+              <rect width="600" height="375" fill="url(#g1a)"/>
+              <!-- PLC Unit -->
+              <rect x="40" y="60" width="140" height="200" rx="8" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="2"/>
+              <text x="110" y="90" text-anchor="middle" fill="#D4A574" font-size="12" font-family="monospace" font-weight="bold">ALLEN-BRADLEY</text>
+              <text x="110" y="108" text-anchor="middle" fill="#A0826D" font-size="10" font-family="monospace">PLC Controller</text>
+              <!-- PLC LEDs -->
+              <circle cx="60" cy="130" r="4" fill="#4CAF50"/><circle cx="75" cy="130" r="4" fill="#4CAF50"/><circle cx="90" cy="130" r="4" fill="#FFC107"/><circle cx="105" cy="130" r="4" fill="#4CAF50"/>
+              <!-- Ladder logic lines -->
+              <line x1="55" y1="155" x2="165" y2="155" stroke="#D4A574" stroke-width="1.5"/>
+              <line x1="55" y1="170" x2="165" y2="170" stroke="#D4A574" stroke-width="1.5"/>
+              <line x1="55" y1="185" x2="165" y2="185" stroke="#D4A574" stroke-width="1.5"/>
+              <line x1="55" y1="155" x2="55" y2="185" stroke="#D4A574" stroke-width="1.5"/>
+              <line x1="165" y1="155" x2="165" y2="185" stroke="#D4A574" stroke-width="1.5"/>
+              <!-- Contact symbols -->
+              <line x1="80" y1="155" x2="80" y2="170" stroke="#D4A574" stroke-width="1.5"/>
+              <line x1="120" y1="170" x2="120" y2="185" stroke="#D4A574" stroke-width="1.5"/>
+              <rect x="73" y="160" width="14" height="6" rx="1" fill="none" stroke="#D4A574" stroke-width="1"/>
+              <rect x="113" y="175" width="14" height="6" rx="1" fill="none" stroke="#D4A574" stroke-width="1"/>
+              <!-- Duty cycle labels -->
+              <text x="60" y="220" fill="#A0826D" font-size="8" font-family="monospace">33%</text>
+              <text x="95" y="220" fill="#A0826D" font-size="8" font-family="monospace">50%</text>
+              <text x="130" y="220" fill="#A0826D" font-size="8" font-family="monospace">66%</text>
+              <!-- Duty cycle bars -->
+              <rect x="60" y="225" width="25" height="8" rx="2" fill="#8B5E3C" opacity="0.5"/><rect x="60" y="225" width="8" height="8" rx="2" fill="#D4A574"/>
+              <rect x="95" y="225" width="25" height="8" rx="2" fill="#8B5E3C" opacity="0.5"/><rect x="95" y="225" width="13" height="8" rx="2" fill="#D4A574"/>
+              <rect x="130" y="225" width="25" height="8" rx="2" fill="#8B5E3C" opacity="0.5"/><rect x="130" y="225" width="17" height="8" rx="2" fill="#D4A574"/>
+              <!-- Arrow PLC to SCADA -->
+              <line x1="180" y1="160" x2="230" y2="120" stroke="#D4A574" stroke-width="2" stroke-dasharray="6,3"/>
+              <polygon points="228,115 235,120 228,125" fill="#D4A574"/>
+              <!-- SCADA Screen -->
+              <rect x="235" y="50" width="160" height="120" rx="8" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="2"/>
+              <rect x="245" y="60" width="140" height="85" rx="4" fill="#0d1b0d"/>
+              <text x="315" y="78" text-anchor="middle" fill="#D4A574" font-size="10" font-family="monospace">IGNITION SCADA</text>
+              <!-- Temperature graph -->
+              <polyline points="255,130 275,120 295,125 315,105 335,110 355,95 375,100" fill="none" stroke="#D4A574" stroke-width="2"/>
+              <line x1="255" y1="135" x2="375" y2="135" stroke="#6B4226" stroke-width="1"/>
+              <text x="315" y="148" text-anchor="middle" fill="#A0826D" font-size="8" font-family="monospace">TEMP MONITORING</text>
+              <!-- Arrow SCADA to Cooling -->
+              <line x1="395" y1="110" x2="430" y2="160" stroke="#D4A574" stroke-width="2" stroke-dasharray="6,3"/>
+              <polygon points="425,160 435,162 430,155" fill="#D4A574"/>
+              <!-- Cooling System -->
+              <rect x="430" y="100" width="140" height="160" rx="8" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="2"/>
+              <text x="500" y="125" text-anchor="middle" fill="#D4A574" font-size="11" font-family="monospace" font-weight="bold">COOLING</text>
+              <!-- Fan icon -->
+              <circle cx="500" cy="175" r="30" fill="none" stroke="#8B5E3C" stroke-width="1.5"/>
+              <path d="M500,150 Q515,165 500,175 Q485,165 500,150Z" fill="#D4A574" opacity="0.7"/>
+              <path d="M500,175 Q515,185 500,200 Q485,185 500,175Z" fill="#D4A574" opacity="0.7"/>
+              <path d="M475,175 Q490,160 500,175 Q490,190 475,175Z" fill="#D4A574" opacity="0.7"/>
+              <path d="M525,175 Q510,160 500,175 Q510,190 525,175Z" fill="#D4A574" opacity="0.7"/>
+              <circle cx="500" cy="175" r="5" fill="#3E2723"/>
+              <!-- Material labels -->
+              <text x="500" y="225" text-anchor="middle" fill="#A0826D" font-size="9" font-family="monospace">Al 6061 | Nylon 101</text>
+              <text x="500" y="245" text-anchor="middle" fill="#D4A574" font-size="8" font-family="monospace">AUTOMATED DUTY CYCLE</text>
+              <!-- Bottom label -->
+              <text x="300" y="340" text-anchor="middle" fill="#D4A574" font-size="14" font-family="sans-serif" font-weight="bold">PLC → SCADA → COOLING CONTROL LOOP</text>
+              <text x="300" y="358" text-anchor="middle" fill="#A0826D" font-size="10" font-family="monospace">Allen-Bradley + Ignition SCADA Integration</text>
+            </svg>
             <span class="pj-corner">Michigan Tech</span>
           </div>
           <div class="pj-info">
@@ -301,9 +361,68 @@
           </div>
         </article>
 
+        <!-- Project 2: FANUC Robot EOAT -->
         <article class="pj-card" data-anim data-expand>
           <div class="pj-visual">
-            <img src="https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?w=600&h=400&fit=crop" alt="FANUC Robot" class="pj-img" />
+            <svg class="pj-svg" viewBox="0 0 600 375" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g2a" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4E342E"/><stop offset="100%" stop-color="#2C1810"/></linearGradient>
+              </defs>
+              <rect width="600" height="375" fill="url(#g2a)"/>
+              <!-- Robot Base -->
+              <rect x="130" y="280" width="100" height="30" rx="4" fill="#555" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="180" y="300" text-anchor="middle" fill="#D4A574" font-size="9" font-family="monospace">FANUC BASE</text>
+              <!-- Robot Arm segments -->
+              <!-- Link 1 (vertical) -->
+              <rect x="165" y="190" width="30" height="90" rx="6" fill="#444" stroke="#D4A574" stroke-width="1.5"/>
+              <!-- Joint 1 -->
+              <circle cx="180" cy="195" r="12" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <circle cx="180" cy="195" r="4" fill="#8B5E3C"/>
+              <!-- Link 2 (angled up-right) -->
+              <rect x="178" y="120" width="22" height="80" rx="6" fill="#444" stroke="#D4A574" stroke-width="1.5" transform="rotate(-25, 189, 160)"/>
+              <!-- Joint 2 -->
+              <circle cx="195" cy="125" r="10" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <circle cx="195" cy="125" r="4" fill="#8B5E3C"/>
+              <!-- Link 3 (horizontal to right) -->
+              <rect x="200" y="90" width="80" height="18" rx="6" fill="#444" stroke="#D4A574" stroke-width="1.5"/>
+              <!-- Joint 3 (wrist) -->
+              <circle cx="278" cy="99" r="10" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <circle cx="278" cy="99" r="4" fill="#8B5E3C"/>
+              <!-- EOAT (End of Arm Tool) -->
+              <rect x="285" y="80" width="60" height="40" rx="5" fill="#2a2a2a" stroke="#D4A574" stroke-width="2"/>
+              <text x="315" y="98" text-anchor="middle" fill="#D4A574" font-size="8" font-family="monospace" font-weight="bold">EOAT</text>
+              <text x="315" y="110" text-anchor="middle" fill="#A0826D" font-size="7" font-family="monospace">GRIP WRAP</text>
+              <!-- Gripper fingers -->
+              <line x1="345" y1="88" x2="365" y2="82" stroke="#D4A574" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="345" y1="100" x2="365" y2="100" stroke="#D4A574" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="345" y1="112" x2="365" y2="118" stroke="#D4A574" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Tennis Racket -->
+              <ellipse cx="420" cy="100" rx="40" ry="55" fill="none" stroke="#8B5E3C" stroke-width="2.5"/>
+              <!-- Racket strings -->
+              <line x1="395" y1="70" x2="395" y2="130" stroke="#6B4226" stroke-width="0.7"/>
+              <line x1="410" y1="55" x2="410" y2="145" stroke="#6B4226" stroke-width="0.7"/>
+              <line x1="425" y1="50" x2="425" y2="150" stroke="#6B4226" stroke-width="0.7"/>
+              <line x1="440" y1="55" x2="440" y2="145" stroke="#6B4226" stroke-width="0.7"/>
+              <line x1="388" y1="80" x2="452" y2="80" stroke="#6B4226" stroke-width="0.7"/>
+              <line x1="383" y1="95" x2="457" y2="95" stroke="#6B4226" stroke-width="0.7"/>
+              <line x1="383" y1="110" x2="457" y2="110" stroke="#6B4226" stroke-width="0.7"/>
+              <line x1="388" y1="125" x2="452" y2="125" stroke="#6B4226" stroke-width="0.7"/>
+              <!-- Racket handle -->
+              <rect x="412" y="155" width="16" height="60" rx="4" fill="#5D4037"/>
+              <!-- Grip wrap motion arrows -->
+              <path d="M405,175 Q395,185 405,195" fill="none" stroke="#D4A574" stroke-width="1.5" stroke-dasharray="4,2"/>
+              <path d="M435,175 Q445,185 435,195" fill="none" stroke="#D4A574" stroke-width="1.5" stroke-dasharray="4,2"/>
+              <!-- Motion path dotted arc -->
+              <path d="M315,70 Q350,30 420,45" fill="none" stroke="#D4A574" stroke-width="1.5" stroke-dasharray="5,4"/>
+              <polygon points="418,40 425,45 418,50" fill="#D4A574"/>
+              <!-- ROBOGUIDE label -->
+              <rect x="400" y="250" width="170" height="70" rx="8" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="485" y="275" text-anchor="middle" fill="#D4A574" font-size="11" font-family="monospace" font-weight="bold">ROBOGUIDE</text>
+              <text x="485" y="293" text-anchor="middle" fill="#A0826D" font-size="9" font-family="monospace">Simulation &amp; Verification</text>
+              <text x="485" y="308" text-anchor="middle" fill="#6B4226" font-size="8" font-family="monospace">TP Programming</text>
+              <!-- Bottom label -->
+              <text x="300" y="350" text-anchor="middle" fill="#D4A574" font-size="14" font-family="sans-serif" font-weight="bold">FANUC EOAT — Automated Grip Wrapping</text>
+            </svg>
             <span class="pj-corner">Michigan Tech</span>
           </div>
           <div class="pj-info">
@@ -317,9 +436,72 @@
           </div>
         </article>
 
+        <!-- Project 3: 6-DOF Robotic Arm -->
         <article class="pj-card" data-anim data-expand>
           <div class="pj-visual">
-            <img src="https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=600&h=400&fit=crop" alt="6-DOF Robotic Arm" class="pj-img" />
+            <svg class="pj-svg" viewBox="0 0 600 375" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g3a" x1="0" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#3E2723"/><stop offset="100%" stop-color="#1B0F0A"/></linearGradient>
+              </defs>
+              <rect width="600" height="375" fill="url(#g3a)"/>
+              <!-- Grid floor -->
+              <line x1="50" y1="310" x2="550" y2="310" stroke="#5D4037" stroke-width="0.5" opacity="0.5"/>
+              <line x1="50" y1="330" x2="550" y2="330" stroke="#5D4037" stroke-width="0.5" opacity="0.3"/>
+              <!-- Base platform -->
+              <ellipse cx="200" cy="310" rx="70" ry="15" fill="#333" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="200" y="315" text-anchor="middle" fill="#A0826D" font-size="8" font-family="monospace">BASE (θ₁)</text>
+              <!-- Joint 1 -->
+              <rect x="185" y="240" width="30" height="70" rx="8" fill="#444" stroke="#D4A574" stroke-width="1.5"/>
+              <circle cx="200" cy="245" r="10" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <text x="200" y="249" text-anchor="middle" fill="#D4A574" font-size="7" font-family="monospace">J1</text>
+              <!-- Joint 2 - angled -->
+              <rect x="190" y="165" width="24" height="80" rx="6" fill="#444" stroke="#D4A574" stroke-width="1.5" transform="rotate(-15, 202, 205)"/>
+              <circle cx="205" cy="170" r="10" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <text x="205" y="174" text-anchor="middle" fill="#D4A574" font-size="7" font-family="monospace">J2</text>
+              <!-- Joint 3 -->
+              <rect x="207" y="105" width="22" height="70" rx="6" fill="#444" stroke="#D4A574" stroke-width="1.5" transform="rotate(10, 218, 140)"/>
+              <circle cx="215" cy="108" r="10" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <text x="215" y="112" text-anchor="middle" fill="#D4A574" font-size="7" font-family="monospace">J3</text>
+              <!-- Joint 4 -->
+              <rect x="218" y="65" width="60" height="18" rx="5" fill="#444" stroke="#D4A574" stroke-width="1.5"/>
+              <circle cx="275" cy="74" r="8" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <text x="275" y="78" text-anchor="middle" fill="#D4A574" font-size="6" font-family="monospace">J4</text>
+              <!-- Joint 5 -->
+              <rect x="280" y="60" width="14" height="28" rx="4" fill="#444" stroke="#D4A574" stroke-width="1.5"/>
+              <circle cx="287" cy="60" r="7" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <text x="287" y="63" text-anchor="middle" fill="#D4A574" font-size="5" font-family="monospace">J5</text>
+              <!-- Joint 6 / End effector -->
+              <rect x="295" y="50" width="30" height="20" rx="4" fill="#2a2a2a" stroke="#D4A574" stroke-width="2"/>
+              <circle cx="310" cy="52" r="5" fill="#333" stroke="#D4A574" stroke-width="1.5"/>
+              <text x="310" y="55" text-anchor="middle" fill="#D4A574" font-size="5" font-family="monospace">J6</text>
+              <!-- Gripper -->
+              <line x1="325" y1="55" x2="340" y2="48" stroke="#D4A574" stroke-width="2" stroke-linecap="round"/>
+              <line x1="325" y1="65" x2="340" y2="72" stroke="#D4A574" stroke-width="2" stroke-linecap="round"/>
+              <!-- DH Parameters table -->
+              <rect x="380" y="50" width="190" height="140" rx="6" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="475" y="72" text-anchor="middle" fill="#D4A574" font-size="11" font-family="monospace" font-weight="bold">DH PARAMETERS</text>
+              <line x1="390" y1="80" x2="560" y2="80" stroke="#5D4037" stroke-width="1"/>
+              <text x="405" y="95" fill="#A0826D" font-size="8" font-family="monospace">Joint  α      a      d      θ</text>
+              <text x="405" y="110" fill="#D4A574" font-size="8" font-family="monospace">  1    0°     0    d₁    θ₁</text>
+              <text x="405" y="123" fill="#D4A574" font-size="8" font-family="monospace">  2   -90°   a₂    0    θ₂</text>
+              <text x="405" y="136" fill="#D4A574" font-size="8" font-family="monospace">  3    0°    a₃    0    θ₃</text>
+              <text x="405" y="149" fill="#D4A574" font-size="8" font-family="monospace">  4   -90°    0   d₄    θ₄</text>
+              <text x="405" y="162" fill="#D4A574" font-size="8" font-family="monospace">  5    90°    0    0    θ₅</text>
+              <text x="405" y="175" fill="#D4A574" font-size="8" font-family="monospace">  6   -90°    0   d₆    θ₆</text>
+              <!-- Workspace arc -->
+              <path d="M120,200 Q100,80 200,40 Q300,10 350,60" fill="none" stroke="#8B5E3C" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+              <text x="110" y="140" fill="#A0826D" font-size="8" font-family="monospace" transform="rotate(-70,110,140)">WORKSPACE</text>
+              <!-- FK/IK labels -->
+              <rect x="380" y="210" width="90" height="35" rx="5" fill="#1a1a1a" stroke="#D4A574" stroke-width="1.5"/>
+              <text x="425" y="225" text-anchor="middle" fill="#D4A574" font-size="9" font-family="monospace" font-weight="bold">FWD KIN</text>
+              <text x="425" y="238" text-anchor="middle" fill="#A0826D" font-size="7" font-family="monospace">θ → (x,y,z)</text>
+              <rect x="480" y="210" width="90" height="35" rx="5" fill="#1a1a1a" stroke="#D4A574" stroke-width="1.5"/>
+              <text x="525" y="225" text-anchor="middle" fill="#D4A574" font-size="9" font-family="monospace" font-weight="bold">INV KIN</text>
+              <text x="525" y="238" text-anchor="middle" fill="#A0826D" font-size="7" font-family="monospace">(x,y,z) → θ</text>
+              <!-- Bottom label -->
+              <text x="300" y="345" text-anchor="middle" fill="#D4A574" font-size="14" font-family="sans-serif" font-weight="bold">6-DOF Robotic Manipulator — Kinematics Analysis</text>
+              <text x="300" y="363" text-anchor="middle" fill="#A0826D" font-size="10" font-family="monospace">SolidWorks CAD + MATLAB Kinematics</text>
+            </svg>
             <span class="pj-corner">Michigan Tech</span>
           </div>
           <div class="pj-info">
@@ -333,9 +515,77 @@
           </div>
         </article>
 
+        <!-- Project 4: Path Planning — 4-Link -->
         <article class="pj-card" data-anim data-expand>
           <div class="pj-visual">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop" alt="Path Planning" class="pj-img" />
+            <svg class="pj-svg" viewBox="0 0 600 375" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g4a" x1="0" y1="0" x2="1" y2="0.8"><stop offset="0%" stop-color="#2C1810"/><stop offset="100%" stop-color="#4E342E"/></linearGradient>
+              </defs>
+              <rect width="600" height="375" fill="url(#g4a)"/>
+              <!-- Grid -->
+              <g opacity="0.15">
+                <line x1="50" y1="50" x2="50" y2="320" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="100" y1="50" x2="100" y2="320" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="150" y1="50" x2="150" y2="320" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="200" y1="50" x2="200" y2="320" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="250" y1="50" x2="250" y2="320" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="300" y1="50" x2="300" y2="320" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="350" y1="50" x2="350" y2="320" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="400" y1="50" x2="400" y2="320" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="50" y1="70" x2="400" y2="70" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="50" y1="120" x2="400" y2="120" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="50" y1="170" x2="400" y2="170" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="50" y1="220" x2="400" y2="220" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="50" y1="270" x2="400" y2="270" stroke="#D4A574" stroke-width="0.5"/>
+                <line x1="50" y1="320" x2="400" y2="320" stroke="#D4A574" stroke-width="0.5"/>
+              </g>
+              <!-- Obstacles -->
+              <rect x="160" y="120" width="50" height="50" rx="4" fill="#5D4037" stroke="#8B5E3C" stroke-width="1.5" opacity="0.7"/>
+              <text x="185" y="150" text-anchor="middle" fill="#A0826D" font-size="8" font-family="monospace">OBS 1</text>
+              <rect x="270" y="200" width="40" height="60" rx="4" fill="#5D4037" stroke="#8B5E3C" stroke-width="1.5" opacity="0.7"/>
+              <text x="290" y="235" text-anchor="middle" fill="#A0826D" font-size="8" font-family="monospace">OBS 2</text>
+              <circle cx="200" cy="250" r="25" fill="#5D4037" stroke="#8B5E3C" stroke-width="1.5" opacity="0.7"/>
+              <text x="200" y="254" text-anchor="middle" fill="#A0826D" font-size="8" font-family="monospace">OBS 3</text>
+              <!-- 4-Link Robot Config 1 (start) -->
+              <circle cx="100" cy="290" r="8" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <line x1="100" y1="290" x2="130" y2="250" stroke="#D4A574" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="130" cy="250" r="5" fill="#333" stroke="#D4A574" stroke-width="1.5"/>
+              <line x1="130" y1="250" x2="155" y2="210" stroke="#D4A574" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="155" cy="210" r="5" fill="#333" stroke="#D4A574" stroke-width="1.5"/>
+              <line x1="155" y1="210" x2="140" y2="180" stroke="#D4A574" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="140" cy="180" r="5" fill="#333" stroke="#D4A574" stroke-width="1.5"/>
+              <line x1="140" y1="180" x2="130" y2="160" stroke="#D4A574" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="130" cy="160" r="3" fill="#D4A574"/>
+              <text x="80" y="310" fill="#D4A574" font-size="9" font-family="monospace">START</text>
+              <!-- Planned path (dotted) -->
+              <path d="M130,160 C130,100 230,90 250,100 S330,130 340,170 S370,250 350,290" fill="none" stroke="#D4A574" stroke-width="2" stroke-dasharray="6,4"/>
+              <!-- 4-Link Robot Config 2 (end) -->
+              <circle cx="350" cy="290" r="8" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <line x1="350" y1="290" x2="370" y2="260" stroke="#8B5E3C" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+              <circle cx="370" cy="260" r="5" fill="#333" stroke="#8B5E3C" stroke-width="1.5" opacity="0.6"/>
+              <line x1="370" y1="260" x2="380" y2="230" stroke="#8B5E3C" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+              <text x="340" y="310" fill="#A0826D" font-size="9" font-family="monospace">GOAL</text>
+              <!-- Path waypoints -->
+              <circle cx="250" cy="100" r="3" fill="#D4A574" opacity="0.8"/>
+              <circle cx="340" cy="170" r="3" fill="#D4A574" opacity="0.8"/>
+              <!-- Legend -->
+              <rect x="430" y="60" width="150" height="180" rx="8" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="505" y="85" text-anchor="middle" fill="#D4A574" font-size="11" font-family="monospace" font-weight="bold">PATH PLANNING</text>
+              <line x1="440" y1="95" x2="570" y2="95" stroke="#5D4037" stroke-width="1"/>
+              <rect x="450" y="108" width="12" height="12" rx="2" fill="#5D4037" stroke="#8B5E3C" stroke-width="1"/>
+              <text x="470" y="118" fill="#A0826D" font-size="9" font-family="monospace">Obstacles</text>
+              <line x1="450" y1="138" x2="462" y2="138" stroke="#D4A574" stroke-width="2" stroke-dasharray="4,2"/>
+              <text x="470" y="142" fill="#A0826D" font-size="9" font-family="monospace">Planned Path</text>
+              <circle cx="456" cy="160" r="5" fill="#333" stroke="#D4A574" stroke-width="1.5"/>
+              <text x="470" y="164" fill="#A0826D" font-size="9" font-family="monospace">Joint Nodes</text>
+              <line x1="450" y1="182" x2="462" y2="182" stroke="#D4A574" stroke-width="3" stroke-linecap="round"/>
+              <text x="470" y="186" fill="#A0826D" font-size="9" font-family="monospace">Robot Links</text>
+              <text x="505" y="218" text-anchor="middle" fill="#6B4226" font-size="8" font-family="monospace">Collision-Free</text>
+              <text x="505" y="230" text-anchor="middle" fill="#6B4226" font-size="8" font-family="monospace">Motion Planning</text>
+              <!-- Bottom label -->
+              <text x="300" y="350" text-anchor="middle" fill="#D4A574" font-size="14" font-family="sans-serif" font-weight="bold">4-Link Manipulator — Collision-Free Path Planning</text>
+            </svg>
             <span class="pj-corner">Michigan Tech</span>
           </div>
           <div class="pj-info">
@@ -349,9 +599,81 @@
           </div>
         </article>
 
+        <!-- Project 5: Mobile Robot Navigation — ROS & SLAM -->
         <article class="pj-card" data-anim data-expand>
           <div class="pj-visual">
-            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop" alt="Mobile Robot" class="pj-img" />
+            <svg class="pj-svg" viewBox="0 0 600 375" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g5a" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3E2723"/><stop offset="100%" stop-color="#1B0F0A"/></linearGradient>
+                <radialGradient id="g5b" cx="0.3" cy="0.5"><stop offset="0%" stop-color="#5D4037" stop-opacity="0.3"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+              </defs>
+              <rect width="600" height="375" fill="url(#g5a)"/>
+              <rect width="600" height="375" fill="url(#g5b)"/>
+              <!-- Map/Room outline -->
+              <rect x="40" y="40" width="350" height="280" rx="4" fill="none" stroke="#8B5E3C" stroke-width="2"/>
+              <!-- Walls inside -->
+              <line x1="40" y1="150" x2="150" y2="150" stroke="#8B5E3C" stroke-width="3"/>
+              <line x1="200" y1="150" x2="250" y2="150" stroke="#8B5E3C" stroke-width="3"/>
+              <line x1="250" y1="150" x2="250" y2="240" stroke="#8B5E3C" stroke-width="3"/>
+              <line x1="150" y1="40" x2="150" y2="100" stroke="#8B5E3C" stroke-width="3"/>
+              <!-- SLAM map points (occupancy) -->
+              <g opacity="0.4">
+                <circle cx="50" cy="50" r="2" fill="#D4A574"/><circle cx="60" cy="48" r="2" fill="#D4A574"/>
+                <circle cx="70" cy="50" r="2" fill="#D4A574"/><circle cx="80" cy="49" r="2" fill="#D4A574"/>
+                <circle cx="90" cy="50" r="2" fill="#D4A574"/><circle cx="100" cy="48" r="2" fill="#D4A574"/>
+                <circle cx="50" cy="145" r="2" fill="#D4A574"/><circle cx="60" cy="148" r="2" fill="#D4A574"/>
+                <circle cx="70" cy="150" r="2" fill="#D4A574"/><circle cx="80" cy="149" r="2" fill="#D4A574"/>
+                <circle cx="248" cy="160" r="2" fill="#D4A574"/><circle cx="250" cy="170" r="2" fill="#D4A574"/>
+                <circle cx="248" cy="180" r="2" fill="#D4A574"/><circle cx="250" cy="190" r="2" fill="#D4A574"/>
+              </g>
+              <!-- Robot (mobile base) -->
+              <rect x="100" y="200" width="36" height="28" rx="6" fill="#333" stroke="#D4A574" stroke-width="2"/>
+              <!-- Wheels -->
+              <rect x="96" y="204" width="6" height="8" rx="2" fill="#D4A574"/>
+              <rect x="96" y="216" width="6" height="8" rx="2" fill="#D4A574"/>
+              <rect x="134" y="204" width="6" height="8" rx="2" fill="#D4A574"/>
+              <rect x="134" y="216" width="6" height="8" rx="2" fill="#D4A574"/>
+              <!-- LiDAR beams -->
+              <line x1="118" y1="200" x2="118" y2="155" stroke="#D4A574" stroke-width="0.8" opacity="0.4"/>
+              <line x1="118" y1="200" x2="80" y2="155" stroke="#D4A574" stroke-width="0.8" opacity="0.3"/>
+              <line x1="118" y1="200" x2="155" y2="155" stroke="#D4A574" stroke-width="0.8" opacity="0.3"/>
+              <line x1="118" y1="200" x2="50" y2="180" stroke="#D4A574" stroke-width="0.8" opacity="0.2"/>
+              <line x1="118" y1="200" x2="180" y2="170" stroke="#D4A574" stroke-width="0.8" opacity="0.2"/>
+              <line x1="118" y1="214" x2="50" y2="240" stroke="#D4A574" stroke-width="0.8" opacity="0.2"/>
+              <line x1="118" y1="228" x2="118" y2="310" stroke="#D4A574" stroke-width="0.8" opacity="0.3"/>
+              <!-- LiDAR sensor on robot -->
+              <circle cx="118" cy="207" r="4" fill="#D4A574" opacity="0.8"/>
+              <!-- Robot trail / path -->
+              <path d="M80,280 L80,240 L100,214" fill="none" stroke="#D4A574" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+              <text x="118" y="244" text-anchor="middle" fill="#D4A574" font-size="8" font-family="monospace">ROBOT</text>
+              <!-- Wall following path -->
+              <path d="M136,214 L180,214 L180,160 L200,155" fill="none" stroke="#8B5E3C" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.5"/>
+              <polygon points="198,150 205,155 198,160" fill="#8B5E3C" opacity="0.5"/>
+              <!-- ROS Architecture -->
+              <rect x="420" y="40" width="160" height="280" rx="8" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="500" y="65" text-anchor="middle" fill="#D4A574" font-size="12" font-family="monospace" font-weight="bold">ROS STACK</text>
+              <line x1="430" y1="75" x2="570" y2="75" stroke="#5D4037" stroke-width="1"/>
+              <!-- ROS nodes -->
+              <rect x="440" y="88" width="120" height="28" rx="4" fill="#2C1810" stroke="#8B5E3C" stroke-width="1"/>
+              <text x="500" y="107" text-anchor="middle" fill="#D4A574" font-size="9" font-family="monospace">/slam_node</text>
+              <rect x="440" y="128" width="120" height="28" rx="4" fill="#2C1810" stroke="#8B5E3C" stroke-width="1"/>
+              <text x="500" y="147" text-anchor="middle" fill="#D4A574" font-size="9" font-family="monospace">/nav_stack</text>
+              <rect x="440" y="168" width="120" height="28" rx="4" fill="#2C1810" stroke="#8B5E3C" stroke-width="1"/>
+              <text x="500" y="187" text-anchor="middle" fill="#D4A574" font-size="9" font-family="monospace">/lidar_driver</text>
+              <rect x="440" y="208" width="120" height="28" rx="4" fill="#2C1810" stroke="#8B5E3C" stroke-width="1"/>
+              <text x="500" y="227" text-anchor="middle" fill="#D4A574" font-size="9" font-family="monospace">/wall_follower</text>
+              <rect x="440" y="248" width="120" height="28" rx="4" fill="#2C1810" stroke="#8B5E3C" stroke-width="1"/>
+              <text x="500" y="267" text-anchor="middle" fill="#D4A574" font-size="9" font-family="monospace">/sensor_fusion</text>
+              <!-- Arrows between nodes -->
+              <line x1="500" y1="116" x2="500" y2="128" stroke="#A0826D" stroke-width="1"/>
+              <line x1="500" y1="156" x2="500" y2="168" stroke="#A0826D" stroke-width="1"/>
+              <line x1="500" y1="196" x2="500" y2="208" stroke="#A0826D" stroke-width="1"/>
+              <line x1="500" y1="236" x2="500" y2="248" stroke="#A0826D" stroke-width="1"/>
+              <text x="500" y="298" text-anchor="middle" fill="#A0826D" font-size="8" font-family="monospace">Gazebo Simulation</text>
+              <text x="500" y="312" text-anchor="middle" fill="#6B4226" font-size="8" font-family="monospace">Environment</text>
+              <!-- Bottom label -->
+              <text x="300" y="350" text-anchor="middle" fill="#D4A574" font-size="14" font-family="sans-serif" font-weight="bold">Mobile Robot — ROS SLAM Navigation</text>
+            </svg>
             <span class="pj-corner">Michigan Tech</span>
           </div>
           <div class="pj-info">
@@ -365,9 +687,73 @@
           </div>
         </article>
 
+        <!-- Project 6: Anti-Collision Warning System -->
         <article class="pj-card" data-anim data-expand>
           <div class="pj-visual">
-            <img src="https://content.instructables.com/FPD/8ETG/H994RT1X/FPD8ETGH994RT1X.jpg" alt="Arduino System" class="pj-img" />
+            <svg class="pj-svg" viewBox="0 0 600 375" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g6a" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1B0F0A"/><stop offset="100%" stop-color="#3E2723"/></linearGradient>
+              </defs>
+              <rect width="600" height="375" fill="url(#g6a)"/>
+              <!-- Road -->
+              <rect x="0" y="200" width="600" height="130" fill="#2a2a2a"/>
+              <line x1="0" y1="265" x2="600" y2="265" stroke="#5D4037" stroke-width="2" stroke-dasharray="20,15"/>
+              <!-- Heavy Vehicle (truck side view) -->
+              <rect x="60" y="210" width="200" height="90" rx="6" fill="#4E342E" stroke="#8B5E3C" stroke-width="2"/>
+              <!-- Truck cab -->
+              <rect x="220" y="230" width="60" height="70" rx="6" fill="#5D4037" stroke="#8B5E3C" stroke-width="2"/>
+              <rect x="235" y="240" width="35" height="25" rx="3" fill="#1a1a1a" stroke="#A0826D" stroke-width="1"/>
+              <!-- Wheels -->
+              <circle cx="110" cy="305" r="18" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="2"/>
+              <circle cx="110" cy="305" r="8" fill="#333"/>
+              <circle cx="200" cy="305" r="18" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="2"/>
+              <circle cx="200" cy="305" r="8" fill="#333"/>
+              <circle cx="250" cy="305" r="18" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="2"/>
+              <circle cx="250" cy="305" r="8" fill="#333"/>
+              <!-- Ultrasonic sensors on truck -->
+              <rect x="55" y="240" width="12" height="8" rx="2" fill="#D4A574" stroke="#D4A574" stroke-width="1"/>
+              <text x="48" y="260" fill="#D4A574" font-size="7" font-family="monospace">US1</text>
+              <rect x="55" y="270" width="12" height="8" rx="2" fill="#D4A574" stroke="#D4A574" stroke-width="1"/>
+              <text x="48" y="290" fill="#D4A574" font-size="7" font-family="monospace">US2</text>
+              <!-- Ultrasonic waves (left blind spot) -->
+              <path d="M55,244 Q35,244 25,230" fill="none" stroke="#D4A574" stroke-width="1.5" opacity="0.7"/>
+              <path d="M55,244 Q30,244 15,225" fill="none" stroke="#D4A574" stroke-width="1" opacity="0.5"/>
+              <path d="M55,244 Q25,244 5,220" fill="none" stroke="#D4A574" stroke-width="0.8" opacity="0.3"/>
+              <path d="M55,274 Q35,280 25,295" fill="none" stroke="#D4A574" stroke-width="1.5" opacity="0.7"/>
+              <path d="M55,274 Q30,285 15,300" fill="none" stroke="#D4A574" stroke-width="1" opacity="0.5"/>
+              <!-- Blind spot zone -->
+              <ellipse cx="25" cy="260" rx="35" ry="50" fill="none" stroke="#D4A574" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.4"/>
+              <text x="25" y="262" text-anchor="middle" fill="#D4A574" font-size="8" font-family="monospace" opacity="0.6">BLIND</text>
+              <text x="25" y="273" text-anchor="middle" fill="#D4A574" font-size="8" font-family="monospace" opacity="0.6">SPOT</text>
+              <!-- Arduino board (inside truck) -->
+              <rect x="120" y="230" width="60" height="40" rx="4" fill="#1a5c3a" stroke="#D4A574" stroke-width="1.5"/>
+              <text x="150" y="248" text-anchor="middle" fill="#fff" font-size="7" font-family="monospace" font-weight="bold">ARDUINO</text>
+              <text x="150" y="260" text-anchor="middle" fill="#ccc" font-size="6" font-family="monospace">UNO</text>
+              <!-- Wires from sensors to Arduino -->
+              <line x1="67" y1="244" x2="120" y2="244" stroke="#D4A574" stroke-width="1" stroke-dasharray="3,2"/>
+              <line x1="67" y1="274" x2="120" y2="260" stroke="#D4A574" stroke-width="1" stroke-dasharray="3,2"/>
+              <!-- Warning system -->
+              <rect x="380" y="60" width="190" height="200" rx="8" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="475" y="85" text-anchor="middle" fill="#D4A574" font-size="12" font-family="monospace" font-weight="bold">WARNING SYSTEM</text>
+              <line x1="390" y1="95" x2="560" y2="95" stroke="#5D4037" stroke-width="1"/>
+              <!-- Distance detection -->
+              <text x="400" y="118" fill="#A0826D" font-size="9" font-family="monospace">Distance Detection:</text>
+              <rect x="400" y="128" width="150" height="16" rx="3" fill="#2C1810"/>
+              <rect x="400" y="128" width="110" height="16" rx="3" fill="#D4A574" opacity="0.6"/>
+              <text x="475" y="140" text-anchor="middle" fill="#1a1a1a" font-size="8" font-family="monospace" font-weight="bold">2.5m detected</text>
+              <!-- Alert levels -->
+              <text x="400" y="168" fill="#A0826D" font-size="9" font-family="monospace">Alert Levels:</text>
+              <circle cx="415" cy="185" r="8" fill="#4CAF50"/><text x="430" y="189" fill="#A0826D" font-size="8" font-family="monospace">Safe (&gt;3m)</text>
+              <circle cx="415" cy="207" r="8" fill="#FFC107"/><text x="430" y="211" fill="#A0826D" font-size="8" font-family="monospace">Caution (1-3m)</text>
+              <circle cx="415" cy="229" r="8" fill="#f44336"/><text x="430" y="233" fill="#A0826D" font-size="8" font-family="monospace">Danger (&lt;1m)</text>
+              <!-- Buzzer icon -->
+              <text x="475" y="255" text-anchor="middle" fill="#6B4226" font-size="8" font-family="monospace">Audible + Visual Alert</text>
+              <!-- Connection line -->
+              <line x1="280" y1="250" x2="380" y2="160" stroke="#D4A574" stroke-width="1.5" stroke-dasharray="6,3"/>
+              <polygon points="378,155 385,160 378,165" fill="#D4A574"/>
+              <!-- Bottom label -->
+              <text x="300" y="350" text-anchor="middle" fill="#D4A574" font-size="14" font-family="sans-serif" font-weight="bold">Anti-Collision Warning — Arduino + Ultrasonic</text>
+            </svg>
             <span class="pj-corner">Marwadi Univ.</span>
           </div>
           <div class="pj-info">
@@ -392,7 +778,6 @@
       <p class="sec-sub" data-anim>What keeps me inspired outside the lab</p>
 
       <div class="hobby-grid">
-        <!-- UPDATE: Change hobbies to match yours -->
         <div class="hobby-card" data-anim>
           <div class="hobby-emoji">🚗</div>
           <h3>Cars &amp; Automotive</h3>
@@ -427,7 +812,7 @@
     </div>
   </section>
 
-  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <!-- ═══════════════════ CONTACT (LinkedIn only, no form) ═══════════════════ -->
   <section class="contact" id="contact">
     <div class="container">
       <h2 class="sec-title" data-anim>Get in Touch</h2>
@@ -438,33 +823,6 @@
           <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77A1.75 1.75 0 0 0 0 1.73v20.54A1.75 1.75 0 0 0 1.77 24h20.45A1.75 1.75 0 0 0 24 22.27V1.73A1.75 1.75 0 0 0 22.22 0Z"/></svg>
           <span>Connect on LinkedIn</span>
         </a>
-
-        <form class="ct-form" id="contactForm" data-anim novalidate>
-          <div class="form-row">
-            <div class="fg">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-              <span class="ferr" id="nameError"></span>
-            </div>
-            <div class="fg">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required />
-              <span class="ferr" id="emailError"></span>
-            </div>
-          </div>
-          <div class="fg">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Your message…" required></textarea>
-            <span class="ferr" id="messageError"></span>
-          </div>
-          <button type="submit" class="btn btn-glow btn-submit">
-            <span class="btn-text">Send Message</span>
-            <span class="btn-loader"></span>
-          </button>
-          <div class="form-ok" id="formSuccess">
-            <span class="ok-icon">✓</span> Thanks! I'll get back to you soon.
-          </div>
-        </form>
       </div>
     </div>
   </section>
