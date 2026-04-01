@@ -1,1 +1,422 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ============================================================
+       UPDATE: Change the <title> to your preferred display name
+       ============================================================ -->
+  <title>Md Rafsan Isdani — Controls &amp; Automation Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ============================================================
+       FONTS — Bricolage Grotesque (headings) + DM Sans (body)
+       Swap these Google Fonts links to change typography.
+       Browse: https://fonts.google.com
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="nav-logo">
+      <!-- UPDATE: Your initials or name -->
+      <span class="logo-glyph">&lt;</span>RI<span class="logo-glyph">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════
+       HERO / ABOUT ME
+       Update greeting, name, role, bio, and profile image below.
+       ════════════════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <canvas id="circuitCanvas" class="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-tag anim-up">
+          <span class="tag-dot"></span>
+          <span>Open to Controls &amp; Automation Opportunities</span>
+        </div>
+        <!-- UPDATE: Your name -->
+        <h1 class="hero-name anim-up d1">Md Rafsan<br/>Isdani</h1>
+        <!-- UPDATE: Your role / tagline -->
+        <p class="hero-role anim-up d2">Mechatronics &amp; Automation Engineer</p>
+        <!-- UPDATE: Short bio -->
+        <p class="hero-bio anim-up d3">
+          Master's student at Michigan Technological University specializing in
+          PLC programming, SCADA systems, industrial robotics, and real-time control.
+          I bridge mechanical systems with intelligent automation to build
+          solutions that work on the factory floor.
+        </p>
+        <div class="hero-stats anim-up d4">
+          <div class="stat">
+            <span class="stat-num">6+</span>
+            <span class="stat-label">Engineering Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">MS</span>
+            <span class="stat-label">Mechatronics @ MTU</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">GTA</span>
+            <span class="stat-label">Physics Department</span>
+          </div>
+        </div>
+        <div class="hero-cta anim-up d5">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-visual anim-fade d3">
+        <div class="avatar-ring">
+          <div class="avatar-frame">
+            <!-- UPDATE: Replace src with your profile photo -->
+            <img
+              src="https://api.dicebear.com/9.x/initials/svg?seed=RI&backgroundColor=0891b2&textColor=ffffff&fontSize=40"
+              alt="Md Rafsan Isdani profile photo"
+              class="avatar-img"
+            />
+          </div>
+          <div class="orbit"><span class="orb-dot"></span></div>
+          <div class="orbit orbit-2"><span class="orb-dot orb-dot-2"></span></div>
+        </div>
+        <div class="hero-badge badge-1">
+          <span class="badge-icon">⚙️</span> PLC &amp; SCADA
+        </div>
+        <div class="hero-badge badge-2">
+          <span class="badge-icon">🤖</span> FANUC Robotics
+        </div>
+        <div class="hero-badge badge-3">
+          <span class="badge-icon">🔧</span> SolidWorks
+        </div>
+      </div>
+    </div>
+    <a href="#experience" class="scroll-cue" aria-label="Scroll to experience">
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       EXPERIENCE & EDUCATION
+       ════════════════════════════════════════════════════════════ -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <h2 class="section-heading">Experience &amp; Education</h2>
+      <p class="section-sub">My professional and academic journey</p>
+
+      <div class="timeline">
+        <div class="tl-item" data-anim>
+          <div class="tl-marker"></div>
+          <div class="tl-card">
+            <span class="tl-date">Aug 2025 – Present</span>
+            <h3 class="tl-title">Graduate Teaching Assistant</h3>
+            <p class="tl-place">Michigan Technological University — Department of Physics</p>
+            <ul class="tl-details">
+              <li>Guide undergraduates in labs covering mechanics, electromagnetism, sensors, and data acquisition</li>
+              <li>Supervise experimental setups involving instrumentation, measurement systems, and real-time data analysis</li>
+              <li>Integrate theoretical physics with practical engineering applications</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-anim>
+          <div class="tl-marker"></div>
+          <div class="tl-card">
+            <span class="tl-date">Aug 2024 – Apr 2026 (Expected)</span>
+            <h3 class="tl-title">M.S. Mechatronics, Robotics &amp; Automation</h3>
+            <p class="tl-place">Michigan Technological University — Houghton, MI</p>
+            <ul class="tl-details">
+              <li>Focus: Industrial Automation, Robotics, Real-time Control</li>
+              <li>Key courses: Advanced PLC, Real-time Robotics (FANUC), Data Acquisition &amp; Signal Processing, Control Systems, Dynamics &amp; Kinematics</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-anim>
+          <div class="tl-marker"></div>
+          <div class="tl-card">
+            <span class="tl-date">Jan 2021 – Dec 2021</span>
+            <h3 class="tl-title">Technical Intern</h3>
+            <p class="tl-place">Marwadi University — Office of International Affairs, Rajkot, India</p>
+            <ul class="tl-details">
+              <li>Administered student records using web-based information systems and Excel</li>
+              <li>Ensured data accuracy, consistency, and system reliability through formulas, validation, and reporting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-anim>
+          <div class="tl-marker"></div>
+          <div class="tl-card">
+            <span class="tl-date">2019 – 2023</span>
+            <h3 class="tl-title">B.Tech Automobile Engineering</h3>
+            <p class="tl-place">Marwadi University — Rajkot, Gujarat, India</p>
+            <ul class="tl-details">
+              <li>Foundation in mechanical systems, thermodynamics, automotive design, and manufacturing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       SKILLS
+       ════════════════════════════════════════════════════════════ -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 class="section-heading">Technical Arsenal</h2>
+      <p class="section-sub">Platforms, tools, and technologies I work with</p>
+
+      <div class="skills-mosaic">
+        <div class="sk-card sk-wide" data-anim>
+          <div class="sk-icon-wrap"><span class="sk-icon">🏭</span></div>
+          <h3 class="sk-title">Industrial Automation</h3>
+          <div class="sk-bars">
+            <div class="sk-bar-row"><span class="sk-bar-label">RSLogix 5000 (Allen-Bradley)</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="90"></div></div></div>
+            <div class="sk-bar-row"><span class="sk-bar-label">TIA Portal (Siemens S7)</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="85"></div></div></div>
+            <div class="sk-bar-row"><span class="sk-bar-label">SCADA (Ignition)</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="85"></div></div></div>
+            <div class="sk-bar-row"><span class="sk-bar-label">HMI (FactoryTalk)</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="80"></div></div></div>
+            <div class="sk-bar-row"><span class="sk-bar-label">Ladder Logic Programming</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="92"></div></div></div>
+          </div>
+        </div>
+
+        <div class="sk-card" data-anim>
+          <div class="sk-icon-wrap"><span class="sk-icon">🤖</span></div>
+          <h3 class="sk-title">Robotics</h3>
+          <div class="sk-bars">
+            <div class="sk-bar-row"><span class="sk-bar-label">FANUC (TP / ROBOGUIDE)</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="88"></div></div></div>
+            <div class="sk-bar-row"><span class="sk-bar-label">ROS / Gazebo / Rviz</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="80"></div></div></div>
+            <div class="sk-bar-row"><span class="sk-bar-label">SLAM &amp; Navigation</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="78"></div></div></div>
+          </div>
+        </div>
+
+        <div class="sk-card" data-anim>
+          <div class="sk-icon-wrap"><span class="sk-icon">💻</span></div>
+          <h3 class="sk-title">Programming</h3>
+          <div class="sk-bars">
+            <div class="sk-bar-row"><span class="sk-bar-label">Python</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="82"></div></div></div>
+            <div class="sk-bar-row"><span class="sk-bar-label">MATLAB / Simulink</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="85"></div></div></div>
+            <div class="sk-bar-row"><span class="sk-bar-label">C</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="75"></div></div></div>
+            <div class="sk-bar-row"><span class="sk-bar-label">LabVIEW</span><div class="sk-bar-track"><div class="sk-bar-fill" data-level="78"></div></div></div>
+          </div>
+        </div>
+
+        <div class="sk-card sk-wide" data-anim>
+          <div class="sk-icon-wrap"><span class="sk-icon">🎯</span></div>
+          <h3 class="sk-title">Design, Simulation &amp; Tools</h3>
+          <div class="sk-tags">
+            <span class="sk-tag">SolidWorks</span>
+            <span class="sk-tag">AutoCAD</span>
+            <span class="sk-tag">Autodesk Fusion 360</span>
+            <span class="sk-tag">MATLAB</span>
+            <span class="sk-tag">Gazebo</span>
+            <span class="sk-tag">Rviz</span>
+            <span class="sk-tag">SLAM</span>
+            <span class="sk-tag">LabVIEW</span>
+            <span class="sk-tag">Linux (Ubuntu)</span>
+            <span class="sk-tag">ROBOGUIDE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       PROJECTS
+       To add a project: copy any <article class="pj-card"> block
+       ════════════════════════════════════════════════════════════ -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-heading">University Projects</h2>
+      <p class="section-sub">Hands-on engineering work from Michigan Tech &amp; Marwadi</p>
+
+      <div class="pj-grid">
+        <article class="pj-card" data-anim>
+          <div class="pj-img-wrap">
+            <img src="https://api.dicebear.com/9.x/shapes/svg?seed=plctemp&backgroundColor=0891b2,164e63" alt="PLC Temperature Control" class="pj-img" />
+            <div class="pj-overlay"><a href="#" class="pj-link" target="_blank" rel="noopener">Details</a></div>
+            <span class="pj-badge-corner">Michigan Tech</span>
+          </div>
+          <div class="pj-body">
+            <h3 class="pj-title">Dynamic Temperature Cooling — Allen-Bradley PLC</h3>
+            <p class="pj-desc">Developed a dynamic temperature control system using Allen-Bradley PLC and Ignition SCADA with ladder logic routines, programmable cooling schedules (33%, 50%, 66% duty cycles), and automated fan/actuator control for precise cooling of Aluminum 6061 and Nylon 101.</p>
+            <div class="pj-tech"><span>Allen-Bradley PLC</span><span>Ignition SCADA</span><span>Ladder Logic</span><span>RSLogix 5000</span></div>
+          </div>
+        </article>
+
+        <article class="pj-card" data-anim>
+          <div class="pj-img-wrap">
+            <img src="https://api.dicebear.com/9.x/shapes/svg?seed=fanucarm&backgroundColor=7c3aed,4c1d95" alt="FANUC EOAT" class="pj-img" />
+            <div class="pj-overlay"><a href="#" class="pj-link" target="_blank" rel="noopener">Details</a></div>
+            <span class="pj-badge-corner">Michigan Tech</span>
+          </div>
+          <div class="pj-body">
+            <h3 class="pj-title">FANUC Robot EOAT Automation</h3>
+            <p class="pj-desc">Designed and integrated custom end-of-arm tooling for automated tennis racket over-grip wrapping using a FANUC industrial robot. Programmed robot paths with TP programming and simulated in ROBOGUIDE.</p>
+            <div class="pj-tech"><span>FANUC</span><span>TP Programming</span><span>ROBOGUIDE</span><span>EOAT Design</span></div>
+          </div>
+        </article>
+
+        <article class="pj-card" data-anim>
+          <div class="pj-img-wrap">
+            <img src="https://api.dicebear.com/9.x/shapes/svg?seed=6dofarm&backgroundColor=ea580c,9a3412" alt="6-DOF Robotic Arm" class="pj-img" />
+            <div class="pj-overlay"><a href="#" class="pj-link" target="_blank" rel="noopener">Details</a></div>
+            <span class="pj-badge-corner">Michigan Tech</span>
+          </div>
+          <div class="pj-body">
+            <h3 class="pj-title">6-DOF Robotic Arm Manipulator</h3>
+            <p class="pj-desc">Designed a 6-DOF robotic arm from concept sketch to working prototype. Modeled the manipulator in SolidWorks and developed forward/inverse kinematics solutions in MATLAB for path planning and control.</p>
+            <div class="pj-tech"><span>SolidWorks</span><span>MATLAB</span><span>Kinematics</span><span>Path Planning</span></div>
+          </div>
+        </article>
+
+        <article class="pj-card" data-anim>
+          <div class="pj-img-wrap">
+            <img src="https://api.dicebear.com/9.x/shapes/svg?seed=pathplan&backgroundColor=0d9488,134e4a" alt="Robotic Path Planning" class="pj-img" />
+            <div class="pj-overlay"><a href="#" class="pj-link" target="_blank" rel="noopener">Details</a></div>
+            <span class="pj-badge-corner">Michigan Tech</span>
+          </div>
+          <div class="pj-body">
+            <h3 class="pj-title">Robotic Path Planning — 4-Link Manipulator</h3>
+            <p class="pj-desc">Designed a 4-link robot in SolidWorks, then planned and simulated collision-free paths in MATLAB for obstacle avoidance and workspace optimization.</p>
+            <div class="pj-tech"><span>SolidWorks</span><span>MATLAB</span><span>Collision Avoidance</span></div>
+          </div>
+        </article>
+
+        <article class="pj-card" data-anim>
+          <div class="pj-img-wrap">
+            <img src="https://api.dicebear.com/9.x/shapes/svg?seed=mobilerobot&backgroundColor=2563eb,1e3a8a" alt="Mobile Robot Navigation" class="pj-img" />
+            <div class="pj-overlay"><a href="#" class="pj-link" target="_blank" rel="noopener">Details</a></div>
+            <span class="pj-badge-corner">Michigan Tech</span>
+          </div>
+          <div class="pj-body">
+            <h3 class="pj-title">Mobile Robot Navigation with ROS &amp; SLAM</h3>
+            <p class="pj-desc">Programmed multi-sensor mobile robots for wall-following and autonomous mapping using ROS and SLAM algorithms in a Gazebo simulation environment.</p>
+            <div class="pj-tech"><span>ROS</span><span>SLAM</span><span>Gazebo</span><span>Python</span></div>
+          </div>
+        </article>
+
+        <article class="pj-card" data-anim>
+          <div class="pj-img-wrap">
+            <img src="https://api.dicebear.com/9.x/shapes/svg?seed=anticollision&backgroundColor=dc2626,7f1d1d" alt="Anti-Collision System" class="pj-img" />
+            <div class="pj-overlay"><a href="#" class="pj-link" target="_blank" rel="noopener">Details</a></div>
+            <span class="pj-badge-corner">Marwadi Univ.</span>
+          </div>
+          <div class="pj-body">
+            <h3 class="pj-title">Anti-Collision Warning System</h3>
+            <p class="pj-desc">Developed an ultrasonic sensor and Arduino-based system to reduce blind spot risks in heavy vehicles. Real-time distance detection triggers audible and visual warnings for drivers.</p>
+            <div class="pj-tech"><span>Arduino</span><span>Ultrasonic Sensors</span><span>C</span><span>Embedded Systems</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       CONTACT
+       ════════════════════════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-heading">Let's Build Something</h2>
+      <p class="section-sub">Looking for a controls &amp; automation engineer? Let's talk.</p>
+
+      <div class="contact-grid">
+        <div class="contact-sidebar" data-anim>
+          <div class="ct-item">
+            <span class="ct-icon">📧</span>
+            <div><span class="ct-label">Email</span><a href="mailto:misdani@mtu.edu">misdani@mtu.edu</a></div>
+          </div>
+          <div class="ct-item">
+            <span class="ct-icon">📞</span>
+            <div><span class="ct-label">Phone</span><a href="tel:+19063705570">+1 (906) 370-5570</a></div>
+          </div>
+          <div class="ct-item">
+            <span class="ct-icon">📍</span>
+            <div><span class="ct-label">Location</span><span>Houghton, MI</span></div>
+          </div>
+          <div class="ct-item">
+            <span class="ct-icon">🔗</span>
+            <div><span class="ct-label">LinkedIn</span><a href="https://linkedin.com/in/md-rafsan-isdani-128462199" target="_blank" rel="noopener">md-rafsan-isdani</a></div>
+          </div>
+          <div class="ct-availability">
+            <span class="ct-dot"></span>
+            Open to entry-level Controls &amp; Automation roles
+          </div>
+        </div>
+
+        <form class="ct-form" id="contactForm" data-anim novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required />
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+              <span class="form-error" id="emailError"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity or project…" required></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loader"></span>
+          </button>
+          <div class="form-success" id="formSuccess">
+            <span class="success-check">✓</span>
+            <p>Thanks for reaching out! I'll get back to you soon.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; 2026 Md Rafsan Isdani. Engineered with precision.</p>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/md-rafsan-isdani-128462199" target="_blank" rel="noopener" aria-label="LinkedIn" class="f-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77A1.75 1.75 0 0 0 0 1.73v20.54A1.75 1.75 0 0 0 1.77 24h20.45A1.75 1.75 0 0 0 24 22.27V1.73A1.75 1.75 0 0 0 22.22 0Z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="GitHub" class="f-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 0 0-1.33-1.76c-1.09-.74.08-.73.08-.73a2.52 2.52 0 0 1 1.84 1.24 2.56 2.56 0 0 0 3.5 1 2.56 2.56 0 0 1 .76-1.6c-2.67-.3-5.47-1.34-5.47-5.94a4.64 4.64 0 0 1 1.24-3.23 4.32 4.32 0 0 1 .12-3.18s1-.32 3.3 1.23a11.38 11.38 0 0 1 6 0c2.28-1.55 3.28-1.23 3.28-1.23a4.32 4.32 0 0 1 .12 3.18 4.64 4.64 0 0 1 1.24 3.23c0 4.62-2.81 5.64-5.49 5.93a2.87 2.87 0 0 1 .82 2.23v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg>
+        </a>
+        <a href="mailto:misdani@mtu.edu" aria-label="Email" class="f-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
