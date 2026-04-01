@@ -1,20 +1,19 @@
 /* ============================================================
    RAFSAN ISDANI — Showcase Portfolio JS
    ============================================================
-   1. Circuit-grid canvas animation
+   1. Circuit-grid canvas animation (coffee tones)
    2. Mobile nav toggle
    3. Navbar scroll + active section
    4. Smooth scroll
    5. Scroll-triggered reveals
    6. Expandable cards (Journey, Skills, Projects)
    7. Skill bar animation
-   8. Contact form validation
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ──────────────────────────────────────────────────────────
-     1. CIRCUIT CANVAS
+     1. CIRCUIT CANVAS (coffee palette)
      ────────────────────────────────────────────────────────── */
   const canvas = document.getElementById('gridCanvas');
   if (canvas) {
@@ -59,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let raf;
     function draw() {
       ctx.clearRect(0, 0, w, h);
-      ctx.strokeStyle = 'rgba(6,182,212,0.06)';
+      ctx.strokeStyle = 'rgba(212,165,116,0.06)';
       ctx.lineWidth = 1;
       edges.forEach(([a, b]) => {
         ctx.beginPath();
@@ -71,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nodes.forEach(n => {
         n.p += n.s;
         const alpha = 0.12 + Math.sin(n.p) * 0.08;
-        ctx.fillStyle = `rgba(6,182,212,${alpha})`;
+        ctx.fillStyle = `rgba(212,165,116,${alpha})`;
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fill();
@@ -140,15 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ──────────────────────────────────────────────────────────
      6. EXPANDABLE CARDS
-     Click a card with [data-expand] to toggle its details.
      ────────────────────────────────────────────────────────── */
   document.querySelectorAll('[data-expand]').forEach(card => {
     card.addEventListener('click', e => {
-      // Don't toggle if user clicked a link inside
       if (e.target.closest('a')) return;
       card.classList.toggle('expanded');
 
-      // Animate skill bars inside if expanding
       if (card.classList.contains('expanded')) {
         card.querySelectorAll('.bar-fill').forEach(bar => {
           bar.style.width = bar.dataset.level + '%';
@@ -158,8 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ──────────────────────────────────────────────────────────
-     7. SKILL BAR FILL (for bars outside expandable cards,
-        triggered by scroll)
+     7. SKILL BAR FILL (standalone bars triggered by scroll)
      ────────────────────────────────────────────────────────── */
   const standaloneBars = document.querySelectorAll('.bar-fill:not([data-expand] .bar-fill)');
   if ('IntersectionObserver' in window && standaloneBars.length) {
@@ -173,68 +168,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.25 });
     standaloneBars.forEach(b => bObs.observe(b));
   }
-
-  /* ──────────────────────────────────────────────────────────
-     8. CONTACT FORM
-     ────────────────────────────────────────────────────────── */
-  const form = document.getElementById('contactForm');
-  if (!form) return;
-
-  const nameI = document.getElementById('name');
-  const emailI = document.getElementById('email');
-  const msgI = document.getElementById('message');
-  const nameE = document.getElementById('nameError');
-  const emailE = document.getElementById('emailError');
-  const msgE = document.getElementById('messageError');
-  const okBox = document.getElementById('formSuccess');
-  const subBtn = form.querySelector('.btn-submit');
-
-  const validEmail = s => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
-
-  function validate() {
-    let ok = true;
-    nameE.textContent = emailE.textContent = msgE.textContent = '';
-
-    if (!nameI.value.trim()) { nameE.textContent = 'Please enter your name.'; ok = false; }
-    if (!emailI.value.trim()) { emailE.textContent = 'Please enter your email.'; ok = false; }
-    else if (!validEmail(emailI.value.trim())) { emailE.textContent = 'Invalid email address.'; ok = false; }
-    if (!msgI.value.trim()) { msgE.textContent = 'Please enter a message.'; ok = false; }
-    else if (msgI.value.trim().length < 10) { msgE.textContent = 'At least 10 characters please.'; ok = false; }
-    return ok;
-  }
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    if (!validate()) return;
-
-    subBtn.classList.add('loading');
-    subBtn.disabled = true;
-
-    // Simulated send — replace with real fetch()
-    setTimeout(() => {
-      subBtn.classList.remove('loading');
-      subBtn.disabled = false;
-      form.reset();
-      okBox.classList.add('show');
-      setTimeout(() => okBox.classList.remove('show'), 6000);
-    }, 1200);
-
-    /*
-     * CONNECT A REAL BACKEND:
-     * fetch('https://your-api.com/contact', {
-     *   method: 'POST',
-     *   headers: { 'Content-Type': 'application/json' },
-     *   body: JSON.stringify({
-     *     name: nameI.value.trim(),
-     *     email: emailI.value.trim(),
-     *     message: msgI.value.trim(),
-     *   }),
-     * }).then(…).catch(…);
-     */
-  });
-
-  nameI.addEventListener('input', () => { nameE.textContent = ''; });
-  emailI.addEventListener('input', () => { emailE.textContent = ''; });
-  msgI.addEventListener('input', () => { msgE.textContent = ''; });
 
 });
