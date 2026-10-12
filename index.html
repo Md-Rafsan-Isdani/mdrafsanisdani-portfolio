@@ -85,7 +85,7 @@
           </p>
           <p>
             Away from the lab, I write literary fiction as <strong>Rafsan Isdani</strong> —
-            three novels so far, all listed under <a href="#books" class="inline-link">Books &amp; Writing</a>.
+            four novels so far, all listed under <a href="#books" class="inline-link">Books &amp; Writing</a>.
           </p>
         </div>
         <div class="about-highlights" data-anim>
@@ -98,7 +98,7 @@
             <span class="hl-label">Automobile Eng.<br/>Marwadi University</span>
           </div>
           <div class="hl-card">
-            <span class="hl-num">7+</span>
+            <span class="hl-num">8+</span>
             <span class="hl-label">Engineering<br/>Projects</span>
           </div>
           <div class="hl-card">
@@ -325,6 +325,95 @@
       <p class="sec-sub" data-anim>Click a project to see details</p>
 
       <div class="pj-grid">
+
+        <!-- Project NEW-0: VLM-Assisted Prognostics — NASA C-MAPSS (research) -->
+        <article class="pj-card" data-anim data-expand>
+          <div class="pj-visual">
+            <svg class="pj-svg" viewBox="0 0 600 375" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g10a" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2C1810"/><stop offset="100%" stop-color="#0F0805"/></linearGradient>
+              </defs>
+              <rect width="600" height="375" fill="url(#g10a)"/>
+              <!-- Turbofan engine (side view) -->
+              <ellipse cx="70" cy="110" rx="18" ry="55" fill="#1a1a1a" stroke="#D4A574" stroke-width="2"/>
+              <line x1="70" y1="60" x2="70" y2="160" stroke="#8B5E3C" stroke-width="1"/>
+              <line x1="55" y1="80" x2="85" y2="140" stroke="#8B5E3C" stroke-width="1"/>
+              <line x1="55" y1="140" x2="85" y2="80" stroke="#8B5E3C" stroke-width="1"/>
+              <path d="M70,55 L170,72 L170,148 L70,165" fill="#222" stroke="#8B5E3C" stroke-width="1.5"/>
+              <rect x="95" y="92" width="65" height="36" rx="4" fill="#2C1810" stroke="#A0826D" stroke-width="1"/>
+              <text x="127" y="114" text-anchor="middle" fill="#D4A574" font-size="8" font-family="monospace">HPC · HPT</text>
+              <text x="115" y="188" text-anchor="middle" fill="#D4A574" font-size="9" font-family="monospace" font-weight="bold">C-MAPSS</text>
+              <text x="115" y="201" text-anchor="middle" fill="#A0826D" font-size="7" font-family="monospace">21 sensors · 707 engines</text>
+              <!-- Sensor plot panel -->
+              <rect x="195" y="45" width="175" height="130" rx="6" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="282" y="62" text-anchor="middle" fill="#D4A574" font-size="8" font-family="monospace">SENSOR PLOTS</text>
+              <line x1="205" y1="160" x2="360" y2="160" stroke="#5D4037" stroke-width="1"/>
+              <polyline points="205,140 225,138 245,141 265,135 285,132 305,124 325,115 345,100 360,88" fill="none" stroke="#D4A574" stroke-width="1.8"/>
+              <polyline points="205,100 225,102 245,99 265,104 285,106 305,112 325,120 345,132 360,142" fill="none" stroke="#A0826D" stroke-width="1.3"/>
+              <polyline points="205,80 225,78 245,81 265,79 285,80 305,78 325,81 345,79 360,80" fill="none" stroke="#6B4226" stroke-width="1.2"/>
+              <line x1="325" y1="70" x2="325" y2="160" stroke="#D4A574" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+              <!-- Arrows: data to two branches -->
+              <line x1="170" y1="110" x2="193" y2="110" stroke="#D4A574" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <line x1="282" y1="175" x2="282" y2="210" stroke="#D4A574" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <polygon points="277,207 282,215 287,207" fill="#D4A574"/>
+              <!-- VLM observer -->
+              <rect x="215" y="217" width="135" height="44" rx="6" fill="#2C1810" stroke="#D4A574" stroke-width="1.5"/>
+              <text x="282" y="236" text-anchor="middle" fill="#D4A574" font-size="10" font-family="monospace" font-weight="bold">VLM OBSERVER</text>
+              <text x="282" y="251" text-anchor="middle" fill="#A0826D" font-size="7" font-family="monospace">Qwen2.5-VL-7B · trend · band · abstain</text>
+              <!-- Numerical branch -->
+              <rect x="50" y="217" width="135" height="44" rx="6" fill="#2C1810" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="117" y="236" text-anchor="middle" fill="#D4A574" font-size="10" font-family="monospace" font-weight="bold">8 RUL MODELS</text>
+              <text x="117" y="251" text-anchor="middle" fill="#A0826D" font-size="7" font-family="monospace">XGBoost · BiLSTM · TCN · Transformer</text>
+              <line x1="115" y1="205" x2="115" y2="215" stroke="#D4A574" stroke-width="1.5" stroke-dasharray="3,2"/>
+              <!-- To fusion -->
+              <line x1="117" y1="261" x2="117" y2="285" stroke="#A0826D" stroke-width="1.2"/>
+              <line x1="282" y1="261" x2="282" y2="285" stroke="#A0826D" stroke-width="1.2" stroke-dasharray="3,2"/>
+              <line x1="117" y1="285" x2="282" y2="285" stroke="#A0826D" stroke-width="1.2"/>
+              <line x1="200" y1="285" x2="200" y2="293" stroke="#A0826D" stroke-width="1.2"/>
+              <rect x="135" y="293" width="130" height="26" rx="5" fill="#1a1a1a" stroke="#D4A574" stroke-width="1.5"/>
+              <text x="200" y="310" text-anchor="middle" fill="#D4A574" font-size="8" font-family="monospace" font-weight="bold">DETERMINISTIC FUSION</text>
+              <!-- Findings panel -->
+              <rect x="400" y="45" width="175" height="275" rx="8" fill="#1a1a1a" stroke="#8B5E3C" stroke-width="1.5"/>
+              <text x="487" y="68" text-anchor="middle" fill="#D4A574" font-size="11" font-family="monospace" font-weight="bold">FIGURE LEGIBILITY</text>
+              <line x1="410" y1="78" x2="565" y2="78" stroke="#5D4037" stroke-width="1"/>
+              <text x="415" y="98" fill="#A0826D" font-size="8" font-family="monospace">Unreadable figures</text>
+              <text x="415" y="120" fill="#A0826D" font-size="7" font-family="monospace">FD001</text>
+              <rect x="455" y="112" width="100" height="10" rx="2" fill="#2C1810"/><rect x="455" y="112" width="20" height="10" rx="2" fill="#D4A574"/>
+              <text x="415" y="140" fill="#A0826D" font-size="7" font-family="monospace">FD003</text>
+              <rect x="455" y="132" width="100" height="10" rx="2" fill="#2C1810"/><rect x="455" y="132" width="13" height="10" rx="2" fill="#D4A574"/>
+              <text x="415" y="160" fill="#A0826D" font-size="7" font-family="monospace">FD002</text>
+              <rect x="455" y="152" width="100" height="10" rx="2" fill="#2C1810"/><rect x="455" y="152" width="60" height="10" rx="2" fill="#C8956C"/>
+              <text x="415" y="180" fill="#A0826D" font-size="7" font-family="monospace">FD004</text>
+              <rect x="455" y="172" width="100" height="10" rx="2" fill="#2C1810"/><rect x="455" y="172" width="58" height="10" rx="2" fill="#C8956C"/>
+              <text x="487" y="203" text-anchor="middle" fill="#6B4226" font-size="7" font-family="monospace">1 regime  vs  6 regimes</text>
+              <line x1="410" y1="215" x2="565" y2="215" stroke="#5D4037" stroke-width="1"/>
+              <text x="415" y="235" fill="#A0826D" font-size="8" font-family="monospace">3 seeds · 4 subsets</text>
+              <text x="415" y="252" fill="#A0826D" font-size="8" font-family="monospace">2,121 VLM queries</text>
+              <text x="415" y="269" fill="#A0826D" font-size="8" font-family="monospace">Bounded ±15% reweight</text>
+              <text x="415" y="286" fill="#A0826D" font-size="8" font-family="monospace">Wilcoxon + paired t-test</text>
+              <text x="487" y="308" text-anchor="middle" fill="#6B4226" font-size="8" font-family="monospace">Abstention as signal</text>
+              <!-- Bottom label -->
+              <text x="300" y="350" text-anchor="middle" fill="#D4A574" font-size="14" font-family="sans-serif" font-weight="bold">VLM Evidence for Turbofan RUL Prognostics</text>
+              <text x="300" y="366" text-anchor="middle" fill="#A0826D" font-size="10" font-family="monospace">NASA C-MAPSS · Vision-Language + Numerical Fusion</text>
+            </svg>
+            <span class="pj-corner">Research · Michigan Tech</span>
+          </div>
+          <div class="pj-info">
+            <h3 class="pj-title">VLM-Assisted Prognostics — Turbofan RUL on NASA C-MAPSS</h3>
+            <div class="pj-tags"><span>Vision-Language Models</span><span>Deep Learning</span><span>PHM</span></div>
+            <span class="j-toggle">+</span>
+          </div>
+          <div class="pj-detail">
+            <p>Built a two-branch prognostic framework that pairs eight numerical remaining-useful-life (RUL) models (XGBoost, BiLSTM, TCN, MS-TCN, Transformer and more) with Qwen2.5-VL-7B, which reads full-history plots of all 21 engine sensors and reports degradation trend, regime, a qualitative life band and figure legibility — or abstains when a plot is unreadable. A deterministic, bounded fusion rule keeps the final RUL under numerical control.</p>
+            <p>Evaluated on all four C-MAPSS subsets (707 test engines) across three random seeds. Visual evidence did not improve RUL accuracy, but it exposed a strong reliability signal: the VLM judged 13–20% of figures unreadable under a single operating condition versus 58–60% under six — pointing to VLMs as a qualitative screening and evidence-quality layer rather than a numerical predictor.</p>
+            <p><strong>Status:</strong> Submitted for publication — <em>Aerospace Science and Technology</em> (Elsevier).</p>
+            <div class="pj-tech-full"><span>Python</span><span>PyTorch</span><span>Qwen2.5-VL</span><span>XGBoost</span><span>Transformers</span><span>Predictive Maintenance</span></div>
+            <a href="https://github.com/Md-Rafsan-Isdani/C-MAPSS-VLM-Prognostics" target="_blank" rel="noopener" class="pj-link" aria-label="View the C-MAPSS VLM Prognostics code on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+              View Code on GitHub
+            </a>
+          </div>
+        </article>
 
         <!-- Project NEW-1: Project Neptune — Pneumatic Cobot Safety Assessment -->
         <article class="pj-card" data-anim data-expand>
@@ -989,6 +1078,34 @@
                 Amazon
               </a>
               <a href="https://www.goodreads.com/book/show/260327618-iridescent-eyes" target="_blank" rel="noopener" class="book-btn book-btn-ghost" aria-label="View Iridescent Eyes on Goodreads">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3z"/></svg>
+                Goodreads
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Book 4 — Alam al Qarib -->
+        <article class="book" data-anim>
+          <div class="book-stage">
+            <div class="book-cover">
+              <img src="images/book-alam-al-qarib.jpg" alt="Cover of Alam al Qarib by Rafsan Isdani" loading="lazy" width="800" height="1200" />
+            </div>
+          </div>
+          <div class="book-body">
+            <p class="book-meta"><span>No. 04</span><span class="book-dot"></span><span>Fourth Novel</span></p>
+            <h3 class="book-title">Alam al Qarib</h3>
+            <p class="book-desc">
+              A literary occult mystery — Sahir's journey toward a world that lies
+              closer than it seems, and the truths hidden just beyond its threshold.
+            </p>
+            <p class="book-format">Literary Occult Mystery · Hardcover &amp; Kindle · 2026</p>
+            <div class="book-links">
+              <a href="https://www.amazon.com/dp/B0HMNCLK93" target="_blank" rel="noopener" class="book-btn book-btn-solid" aria-label="Buy Alam al Qarib on Amazon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+                Amazon
+              </a>
+              <a href="https://www.goodreads.com/author/show/72481745.Md_Rafsan_Isdani" target="_blank" rel="noopener" class="book-btn book-btn-ghost" aria-label="View Rafsan Isdani on Goodreads">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3z"/></svg>
                 Goodreads
               </a>
